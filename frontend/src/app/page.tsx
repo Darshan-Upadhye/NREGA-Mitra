@@ -1,5 +1,6 @@
 'use client';
 
+
 import React, { useEffect, useState } from 'react';
 import {
   BarChart,
@@ -163,74 +164,82 @@ export default function Page() {
     translateAll();
   }, [language]);
 
-  useEffect(() => {
-    if (!district) return; 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-    async function fetchDistrictData() {
-      console.log(`Fetching data for: ${district}`);
-      setIsLoading(true); 
-      try {
-        const res = await fetch(`http://localhost:5000/api/nrega/district/${encodeURIComponent(district)}`);
-        
-        if (!res.ok) {
-          if (res.status === 404) {
-             console.warn(`District data not found for: ${district}`);
-             setData(null);
-          } else {
-            throw new Error(`HTTP error! status: ${res.status}`);
-          }
-          return;
+useEffect(() => {
+  if (!district) return;
+
+  async function fetchDistrictData() {
+    console.log(`Fetching data for: ${district}`);
+    setIsLoading(true);
+
+    try {
+      const res = await fetch(
+        `${API_BASE_URL}/api/nrega/district/${encodeURIComponent(district)}`
+      );
+
+      if (!res.ok) {
+        if (res.status === 404) {
+          console.warn(`District data not found for: ${district}`);
+          setData(null);
+        } else {
+          throw new Error(`HTTP error! status: ${res.status}`);
         }
-
-        const val = await res.json() as NregaDistrictData;
-        console.log('Fetched main district data:', val);
-        setData(val); 
-        setShowComparison(false); 
-        
-      } catch (error) {
-        console.error(`Error fetching data for ${district}:`, error);
-        setData(null);
-      } finally {
-        setIsLoading(false); 
+        return;
       }
+
+      const val = (await res.json()) as NregaDistrictData;
+      console.log("Fetched main district data:", val);
+      setData(val);
+      setShowComparison(false);
+    } catch (error) {
+      console.error(`Error fetching data for ${district}:`, error);
+      setData(null);
+    } finally {
+      setIsLoading(false);
     }
+  }
 
-    fetchDistrictData();
-  }, [district]); 
+  fetchDistrictData();
+}, [district]);
 
-  useEffect(() => {
-    if (!compareDistrict) return; 
+useEffect(() => {
+  if (!compareDistrict) return;
 
-    async function fetchCompareData() {
-      console.log(`Fetching comparison data for: ${compareDistrict}`);
-      setIsCompareLoading(true); 
-      try {
-        const res = await fetch(`http://localhost:5000/api/nrega/district/${encodeURIComponent(compareDistrict)}`);
-        
-        if (!res.ok) {
-           if (res.status === 404) {
-             console.warn(`Comparison district data not found for: ${compareDistrict}`);
-             setComparisonData(null);
-           } else {
-            throw new Error(`HTTP error! status: ${res.status}`);
-           }
-           return;
+  async function fetchCompareData() {
+    console.log(`Fetching comparison data for: ${compareDistrict}`);
+    setIsCompareLoading(true);
+
+    try {
+      const res = await fetch(
+        `${API_BASE_URL}/api/nrega/district/${encodeURIComponent(compareDistrict)}`
+      );
+
+      if (!res.ok) {
+        if (res.status === 404) {
+          console.warn(
+            `Comparison district data not found for: ${compareDistrict}`
+          );
+          setComparisonData(null);
+        } else {
+          throw new Error(`HTTP error! status: ${res.status}`);
         }
-
-        const val = await res.json() as NregaDistrictData;
-        console.log('Fetched comparison district data:', val);
-        setComparisonData(val);
-        
-      } catch (error) {
-        console.error(`Error fetching data for ${compareDistrict}:`, error);
-        setComparisonData(null);
-      } finally {
-        setIsCompareLoading(false); 
+        return;
       }
-    }
 
-    fetchCompareData();
-  }, [compareDistrict]); 
+      const val = (await res.json()) as NregaDistrictData;
+      console.log("Fetched comparison district data:", val);
+      setComparisonData(val);
+    } catch (error) {
+      console.error(`Error fetching data for ${compareDistrict}:`, error);
+      setComparisonData(null);
+    } finally {
+      setIsCompareLoading(false);
+    }
+  }
+
+  fetchCompareData();
+}, [compareDistrict]); 
 
 
   const autoLocateDistrict = () => {
