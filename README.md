@@ -83,6 +83,43 @@ It focuses on **clarity, accessibility, and reliability**, ensuring that informa
 3. **Hosting & Deployment**  
    - Backend and database deployed on a **VPS/VM** for stability and scalability.  
    - Frontend deployed with build optimization for production.
+  
+---
+  
+## 🗺️ Dataset Reference
+
+**Official Dataset:**  
+[Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA) – Monthly Performance Data](https://data.gov.in/catalog/mahatma-gandhi-national-rural-employment-guarantee-act-mgnrega)
+
+**Source:** Open Government Data (OGD) Platform, Government of India  
+**Data Type:** District-wise Monthly Performance Metrics  
+**License:** Open Government Data License – India  
+
+---
+
+## 🔮 Future Roadmap
+  
+- [ ] Integrate **AI-based voice assistance** for accessibility  
+- [ ] Build **data comparison tools** across districts and years  
+- [ ] Launch **Progressive Web App (PWA)** for offline mobile use  
+- [ ] Include **citizen feedback** and story-based visualization  
+
+---
+
+## 🤝 Acknowledgements
+
+- **Government of India** – for making MGNREGA data openly accessible  
+- **data.gov.in** – for promoting transparency through open APIs  
+- **Open-Source Community** – for providing the frameworks and tools that power this platform  
+
+---
+
+## 🌟 Vision
+
+To empower every citizen to **understand and engage** with public data that shapes their community’s growth.  
+With **NREGA मित्र**, government transparency meets local awareness — one district at a time.
+
+> **"Discover the Progress Happening Near You."**
 
 ---
 
