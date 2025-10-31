@@ -89,3 +89,13 @@ It focuses on **clarity, accessibility, and reliability**, ensuring that informa
 <img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/83edca43-59df-4136-ad01-9acd95b9257c" />
 
 <img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/045fa884-fb66-4452-9dd2-425defa3fceb" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/368bc6f4-030f-406b-a4df-6cf027d64367" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/268ec708-f2e3-403f-b8ca-d6fb43d8c794" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/ebb26a3a-d9c7-4cdd-911c-d7b7a782e1bd" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/da72bb24-9d4c-4f01-96ab-f9186cdf61e6" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/b6bb6016-f384-4916-9fa7-ae31b8b25038" />
