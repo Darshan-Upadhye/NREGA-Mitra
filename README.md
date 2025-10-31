@@ -86,4 +86,6 @@ It focuses on **clarity, accessibility, and reliability**, ensuring that informa
 
 ---
 
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/83edca43-59df-4136-ad01-9acd95b9257c" />
 
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/045fa884-fb66-4452-9dd2-425defa3fceb" />
