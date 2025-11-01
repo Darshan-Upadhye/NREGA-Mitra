@@ -1,6 +1,5 @@
 'use client';
 
-
 import React, { useEffect, useState } from 'react';
 import {
   BarChart,
@@ -262,15 +261,16 @@ useEffect(() => {
   };
 
   function CircularStat({ value = 0, label = '', color = '#39b98a' }) {
-    const size = 72;
-    const strokeWidth = 8;
+    const size = 64; // Reduced size from 72
+    const strokeWidth = 7; // Reduced stroke width from 8
     const radius = (size - strokeWidth) / 2;
     const circumference = 2 * Math.PI * radius;
     const pct = Math.min(Math.max(value, 0), 100);
     const offset = circumference - (pct / 100) * circumference;
 
     return (
-      <div className="flex flex-col items-center w-1/3">
+      // Removed w-1/3, the parent grid handles layout
+      <div className="flex flex-col items-center">
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
           <circle
             cx={size / 2}
@@ -297,14 +297,15 @@ useEffect(() => {
             y="50%"
             dominantBaseline="central"
             textAnchor="middle"
-            fontSize="13"
+            fontSize="12" // Reduced font size
             fill="#0f172a"
             fontWeight="600"
           >
             {pct}%
           </text>
         </svg>
-        <div className="text-xs text-slate-500 mt-2 text-center">{label}</div>
+        {/* Added w-full to allow text to wrap if needed */}
+        <div className="text-xs text-slate-500 mt-2 text-center w-full">{label}</div>
       </div>
     );
   }
@@ -569,10 +570,10 @@ useEffect(() => {
     
     if (!data) {
        return (
-        <div className="flex justify-center items-center h-64">
-          <div className="text-slate-500">No data found for {district}.</div>
-        </div>
-      );
+         <div className="flex justify-center items-center h-64">
+           <div className="text-slate-500">No data found for {district}.</div>
+         </div>
+       );
     }
     
     const keys = Object.keys(data).filter(k => k !== 'district_name');
@@ -619,7 +620,8 @@ useEffect(() => {
         {!showComparison && (
           <div>
             <div className="text-xs text-slate-400 mb-2">District: {data.district_name}</div>
-            <div className="grid grid-cols-2 gap-3 text-sm text-slate-700">
+            {/* Responsive grid: 1 column on small, 2 on sm and up */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
               {Object.entries(data).map(([key, value]: [string, any]) => {
                 if (['district_name'].includes(key)) return null;
                 return (
@@ -635,18 +637,19 @@ useEffect(() => {
 
         {showComparison && isCompareLoading && (
            <div className="flex justify-center items-center h-40">
-              <div className="text-slate-500">{t.loadingChart || labels.loadingChart}</div>
-            </div>
+             <div className="text-slate-500">{t.loadingChart || labels.loadingChart}</div>
+           </div>
         )}
         
         {showComparison && !isCompareLoading && !comparisonData && (
            <div className="flex justify-center items-center h-40">
-              <div className="text-slate-500">No data found for {compareDistrict}.</div>
-            </div>
+             <div className="text-slate-500">No data found for {compareDistrict}.</div>
+           </div>
         )}
 
         {showComparison && !isCompareLoading && data && comparisonData && (
-          <div className="max-h-[60vh] overflow-y-auto border border-gray-200 rounded p-3">
+          // Added overflow-x-auto for mobile table scrolling
+          <div className="max-h-[60vh] overflow-y-auto overflow-x-auto border border-gray-200 rounded p-3">
             <div className="grid grid-cols-3 gap-4 text-sm text-slate-700 font-medium border-b border-gray-300 pb-1">
               <div>Metric</div>
               <div className="text-center">{data.district_name}</div>
@@ -705,10 +708,10 @@ useEffect(() => {
     
     if (!data) {
        return (
-        <div className="flex justify-center items-center h-64">
-          <div className="text-slate-500">No data found for {district}.</div>
-        </div>
-      );
+         <div className="flex justify-center items-center h-64">
+           <div className="text-slate-500">No data found for {district}.</div>
+         </div>
+       );
     }
 
     const totalJobCardsIssued = Number(data?.Total_No_of_JobCards_issued || data?.Total_No_of_Job_Cards_issued || 0);
@@ -742,7 +745,8 @@ useEffect(() => {
         color: '#2ba26f',
       },
       {
-        value: Math.round(pctHHCompleted100Days),
+        // This was the line with the typo
+        value: Math.round(pctHHCompleted100Days), 
         label: 'HH Completed 100 Days',
         color: '#66c2f1',
       },
@@ -780,7 +784,8 @@ useEffect(() => {
             </div>
             <div style={{ height: 140 }}>
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={worksData} margin={{ top: 4, right: 8, left: 0, bottom: 0 }}>
+                {/* Adjusted margins for Y-axis labels */}
+                <BarChart data={worksData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                   <XAxis dataKey="name" tick={{ fontSize: 11 }} />
                   <YAxis />
                   <Tooltip />
@@ -793,7 +798,8 @@ useEffect(() => {
 
         <div className="rounded-lg p-3 bg-gradient-to-b from-green-50 to-white shadow-sm max-h-[46vh] overflow-y-auto">
           <div className="text-slate-700 font-semibold mb-2">{t.dataSummary || labels.dataSummary}</div>
-          <div className="grid grid-cols-2 gap-3 text-sm text-slate-700">
+          {/* Responsive grid: 1 column on small, 2 on sm and up */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
             {keyLabels.map(({ key, label }) => (
               <div key={key} className="flex justify-between border-b border-slate-200 pb-1">
                 <div className="capitalize">{label}</div>
