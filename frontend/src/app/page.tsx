@@ -63,13 +63,13 @@ async function translateText(text: string, targetLang: string) {
 }
 
 async function reverseGeocode(lat: number, lon: number) {
-  const apiKey = "YOUR_GOOGLE_MAPS_API_KEY"; // Replace with your actual key
+  const apiKey = "YOUR_GOOGLE_MAPS_API_KEY";
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${apiKey}`;
   try {
     const res = await fetch(url);
     const data = await res.json();
     if (data.status === 'OK') {
-      const districtComponent = data.results[0]?.address_components.find((comp: any) => // Added 'any' type to comp
+      const districtComponent = data.results[0]?.address_components.find((comp: any) =>
         comp.types.includes('administrative_area_level_2')
       );
       return districtComponent?.long_name || null;
@@ -261,15 +261,14 @@ useEffect(() => {
   };
 
   function CircularStat({ value = 0, label = '', color = '#39b98a' }) {
-    const size = 64; // Reduced size from 72
-    const strokeWidth = 7; // Reduced stroke width from 8
+    const size = 64;
+    const strokeWidth = 7;
     const radius = (size - strokeWidth) / 2;
     const circumference = 2 * Math.PI * radius;
     const pct = Math.min(Math.max(value, 0), 100);
     const offset = circumference - (pct / 100) * circumference;
 
     return (
-      // Removed w-1/3, the parent grid handles layout
       <div className="flex flex-col items-center">
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
           <circle
@@ -297,14 +296,13 @@ useEffect(() => {
             y="50%"
             dominantBaseline="central"
             textAnchor="middle"
-            fontSize="12" // Reduced font size
+            fontSize="12"
             fill="#0f172a"
             fontWeight="600"
           >
             {pct}%
           </text>
         </svg>
-        {/* Added w-full to allow text to wrap if needed */}
         <div className="text-xs text-slate-500 mt-2 text-center w-full">{label}</div>
       </div>
     );
@@ -620,7 +618,6 @@ useEffect(() => {
         {!showComparison && (
           <div>
             <div className="text-xs text-slate-400 mb-2">District: {data.district_name}</div>
-            {/* Responsive grid: 1 column on small, 2 on sm and up */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
               {Object.entries(data).map(([key, value]: [string, any]) => {
                 if (['district_name'].includes(key)) return null;
@@ -648,7 +645,6 @@ useEffect(() => {
         )}
 
         {showComparison && !isCompareLoading && data && comparisonData && (
-          // Added overflow-x-auto for mobile table scrolling
           <div className="max-h-[60vh] overflow-y-auto overflow-x-auto border border-gray-200 rounded p-3">
             <div className="grid grid-cols-3 gap-4 text-sm text-slate-700 font-medium border-b border-gray-300 pb-1">
               <div>Metric</div>
@@ -745,7 +741,6 @@ useEffect(() => {
         color: '#2ba26f',
       },
       {
-        // This was the line with the typo
         value: Math.round(pctHHCompleted100Days), 
         label: 'HH Completed 100 Days',
         color: '#66c2f1',
@@ -784,7 +779,6 @@ useEffect(() => {
             </div>
             <div style={{ height: 140 }}>
               <ResponsiveContainer width="100%" height="100%">
-                {/* Adjusted margins for Y-axis labels */}
                 <BarChart data={worksData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                   <XAxis dataKey="name" tick={{ fontSize: 11 }} />
                   <YAxis />
@@ -798,7 +792,6 @@ useEffect(() => {
 
         <div className="rounded-lg p-3 bg-gradient-to-b from-green-50 to-white shadow-sm max-h-[46vh] overflow-y-auto">
           <div className="text-slate-700 font-semibold mb-2">{t.dataSummary || labels.dataSummary}</div>
-          {/* Responsive grid: 1 column on small, 2 on sm and up */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
             {keyLabels.map(({ key, label }) => (
               <div key={key} className="flex justify-between border-b border-slate-200 pb-1">
