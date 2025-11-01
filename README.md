@@ -86,28 +86,6 @@ The platform focuses on **clarity, accessibility, and resilience**, ensuring dat
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v18+ recommended)  
-- MongoDB installed locally or accessible via cloud (MongoDB Atlas)  
-- npm or yarn package manager
-
-### Installation Steps
-
-```bash
-# Clone the repository
-git clone https://github.com/<your-username>/nrega-mitra.git
-
-# Navigate to the project folder
-cd nrega-mitra
-
-# Install dependencies for frontend and backend
-cd frontend && npm install
-cd ../backend && npm install
-
----
-
 ## 🗺️ Dataset Reference
 
 **Official Dataset:**  
