@@ -1,6 +1,6 @@
 # NREGA मित्र (NREGA Mitra)
 
-<img width="500" height="500" alt="Image" src="https://github.com/user-attachments/assets/c288eeb1-5e62-4a28-a230-0c4216c47f43" />
+<img width="300" height="300" alt="Image" src="https://github.com/user-attachments/assets/c288eeb1-5e62-4a28-a230-0c4216c47f43" />
 
 ### *Discover the Progress Happening Near You.*
 
