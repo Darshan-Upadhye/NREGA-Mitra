@@ -20,7 +20,7 @@ The data provided by the **Government of India** through [data.gov.in](https://d
 
 > “Our Voice, Our Rights” — The data is public, but not always accessible.
 
-The Government of India provides an open API containing district-wise monthly performance data for MGNREGA.  
+The Government of India provides an open API containing district-wise performance data for MGNREGA.  
 However, several issues limit its usefulness to the public:
 
 - The data format is **too technical** for non-technical citizens.  
