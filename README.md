@@ -1,5 +1,7 @@
 # NREGA मित्र (NREGA Mitra)
 
+<img width="500" height="500" alt="Image" src="https://github.com/user-attachments/assets/c288eeb1-5e62-4a28-a230-0c4216c47f43" />
+
 ### *Discover the Progress Happening Near You.*
 
 ---
@@ -123,4 +125,12 @@ With **NREGA मित्र**, government transparency meets local awareness �
 
 ---
 
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/44935a04-dd1d-45f6-9b69-7c968b79d727" />
 
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/79cf2b88-cd29-44e8-9957-9f433c98dba5" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/c652fe56-0b37-456b-a7d6-1a561ee0b631" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/cede1915-0fad-4adb-93de-7ba4c7f10314" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/826bd56c-1771-4be3-b830-1d87df96b246" />
