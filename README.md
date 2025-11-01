@@ -133,4 +133,12 @@ With **NREGA मित्र**, government transparency meets local awareness �
 
 <img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/cede1915-0fad-4adb-93de-7ba4c7f10314" />
 
-<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/826bd56c-1771-4be3-b830-1d87df96b246" />
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/7b9bcb07-3470-4b53-8e98-1cd0080dde92" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/c6c71033-a2c5-4f5b-9266-5bf0e728ec93" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/8f302dae-2cad-4665-bdb6-cf030d33bcc7" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/739f1c82-10f5-4665-a5ef-0f77b61b1255" />
+
+<img width="299" height="607" alt="Image" src="https://github.com/user-attachments/assets/34a8d7c3-e8c7-4762-9b5e-d9d67066be75" />
